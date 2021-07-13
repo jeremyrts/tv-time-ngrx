@@ -1,4 +1,4 @@
-# Film-time-NgRX
+# Tv-time-NgRx
 
 Small Angular project used to learn and practice the framework NgRx. It's a simple Watchlist using basic CRUD operation. You can add a film by its title, marked it seen, and delete it.
 An article based upon it is available here : [Coming soon]
