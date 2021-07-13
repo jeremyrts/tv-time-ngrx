@@ -1,0 +1,73 @@
+<div class="container">
+    <div class="inputs row justify-content-center">
+        <div class="col-6">
+            <input type="text" class="form-control" placeholder="Film title" [value]="inputTitle"
+                (input)="handleChange(title.value)" #title>
+        </div>
+        <div class="col-1">
+            <button type="button" class="btn btn-outline-primary"
+                (click)="handleAdd(title.value)">Add</button>
+        </div>
+    </div>
+    <div class="list">
+        <h3 class="fs-3 text-primary">To watch </h3>
+        <ul *ngFor="let film of films$ | async">
+            <li *ngIf="!film.seen" class="mb-2">
+                <div class="col-sm">
+                    <div class="row">
+                        <div class="col-1 align-self-center">
+                            <button (click)="handleDelete(film.id)"
+                                class="btn btn-outline-danger btn-delete">X</button>
+                        </div>
+                        <div class="col">
+                            <div class="container-sm">
+                                <div
+                                    class="row row-film align-items-center justify-content-between p-2">
+                                    <div class="col">
+                                        <span class='filmTitle me-4 fs-5'>{{film.title}}</span>
+                                    </div>
+                                    <div class="col button-delete justify-content-end">
+                                        <button (click)="handleSeen(film.id)"
+                                            class="btn btn-outline-primary">Mark as
+                                            seen</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="list">
+        <h3 class="fs-4 text-secondary">Already watched</h3>
+        <ul *ngFor="let film of films$ | async">
+            <li *ngIf="film.seen" class="mb-2">
+                <div class="col-sm">
+                    <div class="row">
+                        <div class="col-1 align-self-center">
+                            <button (click)="handleDelete(film.id)"
+                                class="btn btn-outline-danger btn-delete">X</button>
+                        </div>
+                        <div class="col">
+                            <div class="container-sm">
+                                <div *ngIf="film.seen"
+                                    class="row row-film align-items-center justify-content-between p-2">
+                                    <div class="col">
+                                        <span
+                                            class='filmTitle me-4 fs-5 text-decoration-line-through'>{{film.title}}</span>
+                                    </div>
+                                    <div class="col button-delete justify-content-end">
+                                        <button (click)="handleSeen(film.id)"
+                                            class="btn btn-outline-secondary">Mark as
+                                            unseen</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,48 @@
+h3 {
+    text-align: center;
+}
+
+.container {
+    /* max-width: 500px; */
+    margin: auto;
+    text-align: center;
+}
+
+.inputs {
+    margin: 2rem 0 5rem;
+}
+
+.list {
+    text-align: left;
+    margin: 2rem 0;
+}
+
+.filmTitle {
+    margin: 0 1rem;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    border: solid #F0F0F0 1px;
+    list-style: none;
+}
+
+.row-film {
+    text-align: left;
+}
+
+.btn-delete {
+    opacity: 100% !important;
+}
+
+.seen {
+    opacity: 50%;
+}
+
+.button-delete {
+    display: flex;
+}
